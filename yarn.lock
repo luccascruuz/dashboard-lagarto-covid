@@ -4811,6 +4811,11 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+plotly.js-dist@^2.16.5:
+  version "2.16.5"
+  resolved "https://registry.yarnpkg.com/plotly.js-dist/-/plotly.js-dist-2.16.5.tgz#d2cf47c1ea8ff172f80daddbb3b47759659b8121"
+  integrity sha512-ZvT1qhGGLM7U0FBMyxYN54UExnHLdlJR9OsxYyr4pvnGPar04zAN5wo/iwxy2XZkO1FhNVIHquoCEq5qEphMdg==
+
 postcss-value-parser@^4.0.2:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
