@@ -9,9 +9,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>NextJS</title>
+        <title>Covid Lagarto</title>
 
-        <meta name='description' content='NextJS' />
+        <meta name='description' content='Covid Lagarto' />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />

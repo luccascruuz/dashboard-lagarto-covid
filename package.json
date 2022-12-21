@@ -18,11 +18,18 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "axios": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^7.10.2",
     "next": "13.0.4",
-    "plotly.js-dist": "^2.16.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "5.3.6"
+    "recharts": "^2.2.0",
+    "styled-components": "5.3.6",
+    "swr": "^2.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.2.0",

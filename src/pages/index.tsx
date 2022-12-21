@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
+import { ChakraProvider } from '@chakra-ui/react'
+import { Dashboard } from '../components/dashboard'
+import { HeaderDashboard } from '../components/header-dashboard'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <ChakraProvider>
+      <HeaderDashboard />
+      <Dashboard />
+    </ChakraProvider>
   )
 }
 

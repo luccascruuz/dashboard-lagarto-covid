@@ -1,21 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
 
-  :root {
-  }
-
-  body,
-  input,
-  textarea,
-  select,
-  button {
-    font: 400 1rem '', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   button {
@@ -27,10 +21,5 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
     cursor: pointer;
-  }
-
-  body {
-    background-color: #e3e3e3e3;
-    font-family: '';
   }
 `
