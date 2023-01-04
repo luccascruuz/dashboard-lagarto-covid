@@ -20,3 +20,8 @@ export interface ITotalCasesAndDeaths {
   deathsToday: number
   casesToday: number
 }
+
+export interface IMovingAverageCases {
+  movingAverage: number
+  date: string
+}

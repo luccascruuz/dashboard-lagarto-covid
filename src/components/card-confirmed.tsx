@@ -1,80 +1,33 @@
-import { Card, CardBody, Heading, Skeleton, Flex, CardFooter, Text } from '@chakra-ui/react'
-import { formatNumber } from '../helpers/format-number'
-import { format, addHours } from 'date-fns'
-import { useTotalCasesAndDeaths } from '../hooks/useTotalCasesAndDeaths'
+import { Wrap } from '@chakra-ui/react'
+import { useTotalCasesAndDeaths } from '../hooks/use-total-cases-and-deaths'
+import { NewCasesCard } from './confirmation-cards/new-cases-card'
+import { NewDeathsCard } from './confirmation-cards/new-deaths-card'
+import { ConfirmedCasesCard } from './confirmation-cards/confirmed-cases-card'
+import { ConfirmedDeathsCard } from './confirmation-cards/confirmed-deaths-card'
 
 export function CardConfirmed() {
   const { data, isLoading } = useTotalCasesAndDeaths()
   return (
-    <Flex direction='column' gap='2rem'>
+    <Wrap padding='1rem' justify='center' spacing='1.5rem'>
+      <NewCasesCard casesToday={data.casesToday} isLoading={isLoading} dateCasesToday={data.date} />
 
-      <Card align='center' style={{ boxShadow: '0px 0px 25px 0px lightblue' }}>
-        <CardBody>
-          <Heading textAlign="center" size='md'>Novos casos</Heading>
-          {isLoading ? <Skeleton height='20px' /> : null}
-          {isLoading ? null : (
-            <>
-              <Heading color='black' textAlign='center'>
-                {formatNumber(data.casesToday)}
-              </Heading>
-              <Text align='center' fontSize='xs'>
-                Atualizado em: {format(addHours(new Date(data.date), 3), 'dd/MM/yyyy')}
-              </Text>
-            </>
-          )}
-        </CardBody>
-      </Card>
+      <NewDeathsCard
+        dateDeathsToday={data.date}
+        deathsToday={data.deathsToday}
+        isLoading={isLoading}
+      />
 
-      <Card align='center' textAlign="center" style={{ boxShadow: '0px 0px 25px 0px lightblue' }}>
-        <CardBody>
-          <Heading size='md'>Novos óbitos</Heading>
-          {isLoading ? <Skeleton height='20px' /> : null}
-          {isLoading ? null : (
-            <>
-              <Heading color='black' textAlign='center'>
-                {formatNumber(data.deathsToday)}
-              </Heading>
-              <Text align='center' fontSize='xs'>
-                Atualizado em: {format(addHours(new Date(data.date), 3), 'dd/MM/yyyy')}
-              </Text>
-            </>
-          )}
-        </CardBody>
-      </Card>
+      <ConfirmedCasesCard
+        confirmedCases={data.totalCases}
+        dateConfirmedCases={data.date}
+        isLoading={isLoading}
+      />
 
-      <Card align='center' textAlign="center" style={{ boxShadow: '0px 0px 25px 0px lightblue' }}>
-        <CardBody>
-          <Heading size='md'>Casos confirmados</Heading>
-          {isLoading ? <Skeleton height='2.5rem' /> : null}
-          {isLoading ? null : (
-            <>
-              <Heading color='#3b82f680' textAlign='center'>
-                {formatNumber(data.totalCases)}
-              </Heading>
-              <Text align='center' fontSize='xs'>
-                Atualizado em: {format(addHours(new Date(data.date), 3), 'dd/MM/yyyy')}
-              </Text>
-            </>
-          )}
-        </CardBody>
-      </Card>
-
-      <Card align='center' textAlign="center" style={{ boxShadow: '0px 0px 25px 0px lightblue' }}>
-        <CardBody>
-          <Heading size='md'>Óbitos confirmados</Heading>
-          {isLoading ? <Skeleton height='20px' /> : null}
-          {isLoading ? null : (
-            <>
-              <Heading color='black' textAlign='center'>
-                {formatNumber(data.totalDeaths)}
-              </Heading>
-              <Text align='center' fontSize='xs'>
-                Atualizado em: {format(addHours(new Date(data.date), 3), 'dd/MM/yyyy')}
-              </Text>
-            </>
-          )}
-        </CardBody>
-      </Card>
-    </Flex>
+      <ConfirmedDeathsCard
+        dateConfirmedDeaths={data.date}
+        confirmedDeaths={data.totalDeaths}
+        isLoading={isLoading}
+      />
+    </Wrap>
   )
 }
