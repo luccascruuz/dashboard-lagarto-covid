@@ -12,7 +12,7 @@ const ContainerDashboard = styled.div`
 export function Dashboard() {
   return (
     <ContainerDashboard>
-      <Flex direction='column' gap='2rem'>
+      <Flex direction='column'>
         <CardConfirmed />
         <ChartCovid />
       </Flex>
