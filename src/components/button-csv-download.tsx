@@ -14,8 +14,14 @@ export function ButtonCsvDownload() {
     { label: 'Toral de óbitos', key: 'deaths' },
     { label: 'Novos casos', key: 'new_cases' },
     { label: 'Total de casos', key: 'total_cases' },
-    { label: 'Óbitos por 100 mil habitantes', key: 'deaths_per_100k_inhabitants' },
-    { label: 'Casos por 100 mil habitantes', key: 'totalCases_per_100k_inhabitants' },
+    {
+      label: 'Óbitos por 100 mil habitantes',
+      key: 'deaths_per_100k_inhabitants',
+    },
+    {
+      label: 'Casos por 100 mil habitantes',
+      key: 'totalCases_per_100k_inhabitants',
+    },
     { label: 'Óbitos por total de casos', key: 'deaths_by_totalCases' },
     { label: 'Número da semana', key: 'week_number' },
   ]
@@ -23,10 +29,10 @@ export function ButtonCsvDownload() {
   const csvCovidLagarto = {
     filename: 'casos-covid-lagarto.csv',
     headers: headerCSV,
-    data: data,
+    data,
   }
   return (
-    <Button size="sm" colorScheme='teal' isLoading={isLoading}>
+    <Button size='sm' colorScheme='teal' isLoading={isLoading}>
       <CSVLink {...csvCovidLagarto}>Download CSV</CSVLink>
     </Button>
   )
