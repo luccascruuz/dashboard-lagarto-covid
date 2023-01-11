@@ -6,6 +6,6 @@ export function useCasesDayCovid() {
 
   return {
     data: data?.data || [],
-    isLoading
+    isLoading,
   }
 }

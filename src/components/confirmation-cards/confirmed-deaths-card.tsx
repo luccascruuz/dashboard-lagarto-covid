@@ -19,6 +19,7 @@ export function ConfirmedDeathsCard({
       textAlign='center'
       style={{ boxShadow: '1px 1px 3px 2px #348e91' }}
       width='13.75rem'
+      key='ConfirmedDeathsCard'
     >
       <CardBody>
         <Heading size='md'>Óbitos confirmados</Heading>
@@ -30,7 +31,8 @@ export function ConfirmedDeathsCard({
               {formatNumber(confirmedDeaths)}
             </Heading>
             <Text align='center' fontSize='xs'>
-              Atualizado em: {format(addHours(new Date(dateConfirmedDeaths), 3), 'dd/MM/yyyy')}
+              Atualizado em:{' '}
+              {format(addHours(new Date(dateConfirmedDeaths), 3), 'dd/MM/yyyy')}
             </Text>
           </>
         )}

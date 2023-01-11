@@ -19,7 +19,11 @@ interface IChartCovidCasesProps {
   dataCases: ICasesCovid[]
 }
 
-export function ChartCovidCases({ dataCases, isMobile, paddingBox }: IChartCovidCasesProps) {
+export function ChartCovidCases({
+  dataCases,
+  isMobile,
+  paddingBox,
+}: IChartCovidCasesProps) {
   const transDataCovidCases = dataCases.map((cases) => {
     return {
       data: format(addHours(new Date(cases.date), 3), 'dd/MM/yy'),

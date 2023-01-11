@@ -10,7 +10,8 @@ import { ChartCovidMovingAverage } from './charts-covid/chart-covid-moving-avera
 
 export function ChartCovid() {
   const { data, isLoading: isLoadingCasesDay } = useCasesDayCovid()
-  const { data: dataMovingAverage, isLoading: isLoadingMovingAverage } = useMovingAverageCases()
+  const { data: dataMovingAverage, isLoading: isLoadingMovingAverage } =
+    useMovingAverageCases()
 
   const paddingBox = isMobile ? '1rem 2rem 1rem 0rem' : '1rem 2rem 1rem 1rem'
 
@@ -22,9 +23,17 @@ export function ChartCovid() {
         </Center>
       ) : (
         <VStack spacing={10} align='center' padding='2rem 0rem'>
-          <ChartCovidCases dataCases={data} isMobile={isMobile} paddingBox={paddingBox} />
+          <ChartCovidCases
+            dataCases={data}
+            isMobile={isMobile}
+            paddingBox={paddingBox}
+          />
 
-          <ChartCovidDeaths dataDeaths={data} isMobile={isMobile} paddingBox={paddingBox} />
+          <ChartCovidDeaths
+            dataDeaths={data}
+            isMobile={isMobile}
+            paddingBox={paddingBox}
+          />
 
           <ChartCovidMovingAverage
             dataMovingAverage={dataMovingAverage}

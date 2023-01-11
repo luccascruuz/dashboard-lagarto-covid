@@ -8,10 +8,18 @@ interface INewCasesCardProp {
   casesToday: number
 }
 
-export function NewCasesCard({ dateCasesToday, isLoading, casesToday }: INewCasesCardProp) {
-
+export function NewCasesCard({
+  dateCasesToday,
+  isLoading,
+  casesToday,
+}: INewCasesCardProp) {
   return (
-    <Card align='center' style={{ boxShadow: '1px 1px 3px 2px #348e91' }} width='13.75rem'>
+    <Card
+      align='center'
+      style={{ boxShadow: '1px 1px 3px 2px #348e91' }}
+      width='13.75rem'
+      key='NewCasesCard'
+    >
       <CardBody>
         <Heading textAlign='center' size='md'>
           Novos casos
@@ -24,7 +32,8 @@ export function NewCasesCard({ dateCasesToday, isLoading, casesToday }: INewCase
               {formatNumber(casesToday)}
             </Heading>
             <Text align='center' fontSize='xs'>
-              Atualizado em: {format(addHours(new Date(dateCasesToday), 3), 'dd/MM/yyyy')}
+              Atualizado em:{' '}
+              {format(addHours(new Date(dateCasesToday), 3), 'dd/MM/yyyy')}
             </Text>
           </>
         )}

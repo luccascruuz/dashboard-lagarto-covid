@@ -9,7 +9,11 @@ export function CardConfirmed() {
   const { data, isLoading } = useTotalCasesAndDeaths()
   return (
     <Wrap padding='1rem' justify='center' spacing='1.5rem'>
-      <NewCasesCard casesToday={data.casesToday} isLoading={isLoading} dateCasesToday={data.date} />
+      <NewCasesCard
+        casesToday={data.casesToday}
+        isLoading={isLoading}
+        dateCasesToday={data.date}
+      />
 
       <NewDeathsCard
         dateDeathsToday={data.date}

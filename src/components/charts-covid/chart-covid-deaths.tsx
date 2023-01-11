@@ -18,7 +18,11 @@ interface IChartCovidDeathsProps {
   dataDeaths: ICasesCovid[]
 }
 
-export function ChartCovidDeaths({ dataDeaths, isMobile, paddingBox }: IChartCovidDeathsProps) {
+export function ChartCovidDeaths({
+  dataDeaths,
+  isMobile,
+  paddingBox,
+}: IChartCovidDeathsProps) {
   const transDataCovidDeaths = dataDeaths.map((cases) => {
     return {
       data: format(addHours(new Date(cases.date), 3), 'dd/MM/yy'),
