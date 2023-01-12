@@ -8,8 +8,11 @@ interface INewDeathsCardProp {
   deathsToday: number
 }
 
-export function NewDeathsCard({ dateDeathsToday, deathsToday, isLoading }: INewDeathsCardProp) {
-
+export function NewDeathsCard({
+  dateDeathsToday,
+  deathsToday,
+  isLoading,
+}: INewDeathsCardProp) {
   return (
     <Card
       align='center'
@@ -28,7 +31,8 @@ export function NewDeathsCard({ dateDeathsToday, deathsToday, isLoading }: INewD
               {formatNumber(deathsToday)}
             </Heading>
             <Text align='center' fontSize='xs'>
-              Atualizado em: {format(addHours(new Date(dateDeathsToday), 3), 'dd/MM/yyyy')}
+              Atualizado em:{' '}
+              {format(addHours(new Date(dateDeathsToday), 3), 'dd/MM/yyyy')}
             </Text>
           </>
         )}
