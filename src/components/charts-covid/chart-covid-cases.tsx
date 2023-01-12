@@ -38,6 +38,7 @@ export function ChartCovidCases({
       display='flex'
       padding={paddingBox}
       flexDirection='column'
+      borderRadius='0.5rem'
       alignItems='center'
       gap='0.5rem'
     >

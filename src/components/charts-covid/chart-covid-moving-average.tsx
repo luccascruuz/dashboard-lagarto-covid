@@ -33,6 +33,7 @@ export function ChartCovidMovingAverage({
     <Box
       boxShadow='0.5px 0.5px 1.5px 1px #348e91'
       w='80%'
+      borderRadius='0.5rem'
       display='flex'
       flexDirection='column'
       padding={paddingBox}

@@ -34,6 +34,7 @@ export function ChartCovidDeaths({
       boxShadow='0.5px 0.5px 1.5px 1px #348e91'
       w='80%'
       display='flex'
+      borderRadius='0.5rem'
       flexDirection='column'
       padding={paddingBox}
       alignItems='center'
