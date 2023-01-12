@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-
-const API = axios.create({ baseURL: 'https://api-covid-lagarto.onrender.com', headers: { "Accept-Encoding": "gzip,deflate,compress" } })
+const API = axios.create({
+  baseURL: 'https://api-covid-lagarto.onrender.com',
+})
 
 export { API }

@@ -1,6 +1,5 @@
 import { ITotalCasesAndDeaths } from '../types'
 import { useApiCovid } from './use-api-covid'
-
 export function useTotalCasesAndDeaths() {
   const { data, isLoading } = useApiCovid<ITotalCasesAndDeaths>(
     '/total-cases-and-deaths',

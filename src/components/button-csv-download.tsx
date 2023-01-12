@@ -1,7 +1,16 @@
 import { Button } from '@chakra-ui/react'
 import { CSVLink } from 'react-csv'
+import styled from 'styled-components'
 // import { DownloadIcon } from '@chakra-ui/icons'
 import { useCasesDayCovid } from '../hooks/use-cases-day-covid'
+
+const ButtonStyled = styled(Button)`
+  transition: all 0.45s ease;
+  :hover {
+    transform: scale(1.05);
+  }
+`
+
 export function ButtonCsvDownload() {
   const { data, isLoading } = useCasesDayCovid()
 
@@ -32,8 +41,8 @@ export function ButtonCsvDownload() {
     data,
   }
   return (
-    <Button size='sm' colorScheme='teal' isLoading={isLoading}>
+    <ButtonStyled size='sm' colorScheme='teal' isLoading={isLoading}>
       <CSVLink {...csvCovidLagarto}>Download CSV</CSVLink>
-    </Button>
+    </ButtonStyled>
   )
 }

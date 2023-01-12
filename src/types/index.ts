@@ -25,3 +25,12 @@ export interface IMovingAverageCases {
   movingAverage: number
   date: string
 }
+
+export interface IVaccinationApplied {
+  firstDose: number
+  secondDose: number
+  thirdDose: number
+  fourthDose: number
+  fifthDose: number
+  totalDoses: number
+}
