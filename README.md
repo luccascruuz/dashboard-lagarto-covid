@@ -4,6 +4,18 @@ Painel com os casos de **síndrome respiratória aguda grave (SRAG)** de morador
 
 Os dados vêm da [API SRAG Lagarto-SE](https://api-covid-lagarto-se.vercel.app/docs) (projeto `APICovidLagartoSE`), que lê os microdados do SIVEP-Gripe publicados pelo Ministério da Saúde no OpenDataSUS.
 
+**🔗 Ver o painel em produção: [dashboard-lagarto-covid.vercel.app](https://dashboard-lagarto-covid.vercel.app/)**
+
+## Capturas de tela
+
+![Da pandemia aos dias de hoje e linha do tempo das ondas de SRAG desde 2019](docs/images/visao-geral.png)
+
+![Filtro de período, indicadores e casos por semana epidemiológica](docs/images/casos-por-semana.png)
+
+![Como terminaram os casos, casos por ano e agentes identificados](docs/images/desfechos-e-agentes.png)
+
+![Faixa etária: pandemia comparada ao pós-pandemia](docs/images/faixa-etaria.png)
+
 ## O que o painel mostra
 
 | Bloco | Rota da API | O que responde |
