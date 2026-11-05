@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Roboto } from 'next/font/google'
 import { ChakraProvider } from '@chakra-ui/react'
 import { SWRConfig } from 'swr'
+import { Analytics } from '@vercel/analytics/next'
 import { fetcher } from '../services/api'
 import { theme } from '../styles/theme'
 
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </ChakraProvider>
       </SWRConfig>
+      <Analytics />
     </>
   )
 }
