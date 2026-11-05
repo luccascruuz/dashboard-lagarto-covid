@@ -1,37 +1,47 @@
-import Head from 'next/head'
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
-import Helmet from 'react-helmet'
-
-import { GlobalStyles } from '../styles/GlobalStyles'
+import Head from 'next/head'
+import { Roboto } from 'next/font/google'
+import { ChakraProvider } from '@chakra-ui/react'
+import { SWRConfig } from 'swr'
+import { fetcher } from '../services/api'
 import { theme } from '../styles/theme'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
+  display: 'swap',
+})
+
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Helmet>
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-          crossOrigin='google'
-        />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'
-          rel='stylesheet'
-        />
-      </Helmet>
       <Head>
-        <title>Covid Lagarto</title>
-
-        <meta name='description' content='Covid Lagarto' />
+        <title>Painel SRAG Lagarto-SE</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta
+          name='description'
+          content='Casos, internações em UTI e óbitos por síndrome respiratória aguda grave (SRAG) de moradores de Lagarto-SE, de 2019 até hoje.'
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `:root{--font-roboto:${roboto.style.fontFamily};}`,
+          }}
+        />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <SWRConfig
+        value={{
+          fetcher,
+          revalidateOnFocus: false,
+          dedupingInterval: 60 * 1000,
+          refreshInterval: 30 * 60 * 1000,
+          fallback: pageProps.fallback ?? {},
+        }}
+      >
+        <ChakraProvider theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </SWRConfig>
     </>
   )
 }
-
-export default MyApp
